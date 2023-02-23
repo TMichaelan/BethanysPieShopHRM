@@ -43,9 +43,15 @@ namespace BethanysPieShopHRM.HR
         }
 
 
+
         public void DisplayEmploeeDetails()
         {
             Console.WriteLine($"Created employee: \nName:{firstName}\nLast name: {lastName}\nEmail: {email}\nBirth date: {birthDate.ToShortDateString()}\nHourly rate: {hourlyRate}\n");
+        }
+        
+        public static void DisplayTaxRate()
+        {
+            Console.WriteLine($"The current tax rate is {taxRate}");
         }
 
 
