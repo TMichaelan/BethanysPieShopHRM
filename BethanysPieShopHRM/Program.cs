@@ -131,7 +131,8 @@ george.ReceiveWage();
 
 #endregion
 
-
+//Lists
+/*
 int[] sampleArray1 = new int[5];
 int[] sampleArray2 = new int[] {1,2,3,4,5};
 
@@ -174,5 +175,68 @@ for (int i = 0; i < employeeIds.Length; i++)
 {
     Console.WriteLine($"ID {i + 1}: \t{employeeIds[i]} ");
 }
+*/
+//Collections
+
+/*
+List<int> employeeIdss = new List<int>();
+
+employeeIdss.Add(55);
+employeeIdss.Add(1);
+employeeIdss.Add(943);
+employeeIdss.Add(78);
+employeeIdss.Add(79);
 
 
+if (employeeIdss.Contains(55))
+{
+    Console.WriteLine("55 is found!");
+}
+
+int currentAmountOfEmployees = employeeIdss.Count;
+
+var employeeIdsArray = employeeIdss.ToArray();
+
+employeeIdss.Clear();
+
+
+Console.WriteLine("How many employees IDs do you want to register?");
+
+
+int length2 = int.Parse(Console.ReadLine());
+
+
+for (int i = 0; i < length2; i++)
+{
+    Console.WriteLine("Enter Employee ID: ");
+    int id = int.Parse(Console.ReadLine());
+    employeeIdss.Add(id);
+}
+
+for (int i = 0; i < employeeIdss.Count; i++)
+{
+    Console.WriteLine($"ID {i + 1}: \t{employeeIdss[i]} ");
+}
+
+*/
+
+Employee mary = new("Mary", "Jones", "mary@mail.com", new DateTime(1987, 01, 15), 30, EmployeeType.Manager);
+Employee bobJunior = new("Bob", "Spancer", "bobcancer@mail.com", new DateTime(1993, 08, 1), 20, EmployeeType.Research);
+Employee kevin = new("Kevin", "Marks", "kevin@mail.com", new DateTime(1965, 02, 13), 15, EmployeeType.StoreManager);
+Employee kate = new("Kate", "Greggs", "kate@mail.com", new DateTime(1999, 03, 15), 15, EmployeeType.StoreManager);
+Employee kim = new("Kim", "Jacobs", "kim@mail.com", new DateTime(2000, 06, 8), 15, EmployeeType.StoreManager);
+
+List<Employee> employees = new List<Employee>();
+
+employees.Add(george);
+employees.Insert(0, bethany);
+employees.Add(mary);
+employees.Add(bobJunior);
+employees.Add(kevin);
+employees.Add(kate);
+employees.Add(kim);
+
+foreach(Employee employee in employees)
+{
+    employee.DisplayEmploeeDetails();
+}
