@@ -1,4 +1,5 @@
 ﻿using BethanysPieShopHRM.HR;
+using System.Collections.Immutable;
 using System.Text;
 
 /*
@@ -129,3 +130,49 @@ george.DisplayEmploeeDetails();
 george.ReceiveWage();
 
 #endregion
+
+
+int[] sampleArray1 = new int[5];
+int[] sampleArray2 = new int[] {1,2,3,4,5};
+
+Console.WriteLine("How many employees IDs do you want to register?");
+int length = int.Parse(Console.ReadLine());
+
+int[] employeeIds = new int[length];
+
+var testId = employeeIds[0];
+
+for (int i = 0;i < length; i++)
+{
+    Console.WriteLine("Enter Employee ID: ");
+    int id = int.Parse(Console.ReadLine());
+    employeeIds[i] = id;
+}
+
+for (int i = 0;i < employeeIds.Length; i++)
+{
+    Console.WriteLine($"ID {i + 1}: \t{employeeIds[i]} ");
+}
+
+
+int[] employeeIdsCopy = new int[length];
+
+employeeIds.CopyTo(employeeIdsCopy, 0);
+
+Array.Sort(employeeIds);
+
+Console.WriteLine($"IDs after sort");
+for (int i = 0; i < employeeIds.Length; i++)
+{
+    Console.WriteLine($"ID {i + 1}: \t{employeeIds[i]} ");
+}
+
+Array.Reverse(employeeIds);
+
+Console.WriteLine($"IDs after reverse");
+for (int i = 0; i < employeeIds.Length; i++)
+{
+    Console.WriteLine($"ID {i + 1}: \t{employeeIds[i]} ");
+}
+
+
