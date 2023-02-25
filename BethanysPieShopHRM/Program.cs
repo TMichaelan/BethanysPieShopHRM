@@ -259,3 +259,6 @@ bobJunior.ResearchNewPieTastes(5);
 Employee jake = new Employee("Jake", "Nicols", "jake@mail.com", new DateTime(1995, 02, 6), 16,"New street","123","123456","Pie Ville");
 
 string streetName = jake.Address.ToString();
+
+
+mary.GiveBonus();

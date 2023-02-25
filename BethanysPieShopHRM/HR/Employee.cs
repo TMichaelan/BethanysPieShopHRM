@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -224,6 +225,13 @@ namespace BethanysPieShopHRM.HR
             if (resetHours)
                 NumberOfHoursWorked = 0;
             return Wage;
+
+     
+        }
+
+        public virtual void GiveBonus()
+        {
+            Console.WriteLine($"{FirstName} {LastName} received a generic bonus of 100!");
         }
 
     }
