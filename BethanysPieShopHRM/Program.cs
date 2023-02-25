@@ -12,17 +12,17 @@ Console.WriteLine($"Yearly wage: {yearlyWage} and {yearlyWage2}");
 Console.WriteLine("Creating an employee");
 Console.WriteLine("---------------------\n");
 
-Employee bethany = new Employee("Bethany", "Smith", "bethany@snowball.be", new DateTime (1979,1,16), 25, EmployeeType.Manager);
+Employee bethany = new Employee("Bethany", "Smith", "bethany@snowball.be", new DateTime (1979,1,16), 25);
 
 bethany.DisplayEmploeeDetails();
 
 
 
-Employee test_emp = new("TestName", "TestSurname", "test@mail.com", new DateTime(2001, 08, 28), 10, EmployeeType.Sales);
+Employee test_emp = new("TestName", "TestSurname", "test@mail.com", new DateTime(2001, 08, 28), 10);
 
 test_emp.DisplayEmploeeDetails();
 
-Employee george = new("George", "Jones", "gjones@mail.com", new DateTime(1987, 05, 14), 20, EmployeeType.Research);
+Employee george = new("George", "Jones", "gjones@mail.com", new DateTime(1987, 05, 14), 20);
 
 george.DisplayEmploeeDetails();
 
@@ -220,18 +220,18 @@ for (int i = 0; i < employeeIdss.Count; i++)
 
 */
 
-Employee mary = new("Mary", "Jones", "mary@mail.com", new DateTime(1987, 01, 15), 30, EmployeeType.Manager);
-Employee bobJunior = new("Bob", "Spancer", "bobcancer@mail.com", new DateTime(1993, 08, 1), 20, EmployeeType.Research);
-Employee kevin = new("Kevin", "Marks", "kevin@mail.com", new DateTime(1965, 02, 13), 15, EmployeeType.StoreManager);
-Employee kate = new("Kate", "Greggs", "kate@mail.com", new DateTime(1999, 03, 15), 15, EmployeeType.StoreManager);
-Employee kim = new("Kim", "Jacobs", "kim@mail.com", new DateTime(2000, 06, 8), 15, EmployeeType.StoreManager);
+Employee mary = new("Mary", "Jones", "mary@mail.com", new DateTime(1987, 01, 15), 30);
+//Employee bobJunior = new("Bob", "Spancer", "bobcancer@mail.com", new DateTime(1993, 08, 1), 20);
+Employee kevin = new("Kevin", "Marks", "kevin@mail.com", new DateTime(1965, 02, 13), 15);
+Employee kate = new("Kate", "Greggs", "kate@mail.com", new DateTime(1999, 03, 15), 15);
+Employee kim = new("Kim", "Jacobs", "kim@mail.com", new DateTime(2000, 06, 8), 15);
 
 List<Employee> employees = new List<Employee>();
 
 employees.Add(george);
 employees.Insert(0, bethany);
 employees.Add(mary);
-employees.Add(bobJunior);
+//employees.Add(bobJunior);
 employees.Add(kevin);
 employees.Add(kate);
 employees.Add(kim);
@@ -241,3 +241,17 @@ foreach(Employee employee in employees)
     employee.DisplayEmploeeDetails();
 }
 
+//Derived Class
+
+Manager loh = new Manager("Kim", "Jacobs", "kim@mail.com", new DateTime(2000, 06, 8), 15);
+
+loh.PerformWork(20);
+loh.ReceiveWage();
+loh.DisplayEmploeeDetails();
+
+loh.AttendManagementMeeting();
+
+JuniorResearcher bobJunior = new JuniorResearcher("Bob", "Spancer", "bobcancer@mail.com", new DateTime(1993, 08, 1), 20);
+
+bobJunior.ResearchNewPieTastes(5);
+bobJunior.ResearchNewPieTastes(5);
