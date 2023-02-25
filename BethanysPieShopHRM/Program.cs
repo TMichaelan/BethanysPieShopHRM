@@ -243,15 +243,19 @@ foreach(Employee employee in employees)
 
 //Derived Class
 
-Manager loh = new Manager("Kim", "Jacobs", "kim@mail.com", new DateTime(2000, 06, 8), 15);
+Employee loh = new Manager("Kim", "Jacobs", "kim@mail.com", new DateTime(2000, 06, 8), 15);
 
 loh.PerformWork(20);
 loh.ReceiveWage();
 loh.DisplayEmploeeDetails();
 
-loh.AttendManagementMeeting();
+//loh.AttendManagementMeeting();
 
-JuniorResearcher bobJunior = new JuniorResearcher("Bob", "Spancer", "bobcancer@mail.com", new DateTime(1993, 08, 1), 20);
+Researcher bobJunior = new JuniorResearcher("Bob", "Spancer", "bobcancer@mail.com", new DateTime(1993, 08, 1), 20);
 
 bobJunior.ResearchNewPieTastes(5);
 bobJunior.ResearchNewPieTastes(5);
+
+Employee jake = new Employee("Jake", "Nicols", "jake@mail.com", new DateTime(1995, 02, 6), 16,"New street","123","123456","Pie Ville");
+
+string streetName = jake.Address.ToString();

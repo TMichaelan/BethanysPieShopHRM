@@ -22,6 +22,8 @@ namespace BethanysPieShopHRM.HR
         private const int minumalHoursWorkedUnit = 1;
         //private EmployeeType employeeType;
 
+        private Address address;
+
         public static double taxRate = 0.15;
 
         public string FirstName
@@ -69,6 +71,13 @@ namespace BethanysPieShopHRM.HR
                 birthDate = value;
             }
         }
+
+        public Address Address
+        {
+            get { return address; }
+            set { address = value; }
+        }
+
         public int NumberOfHoursWorked
         {
             get
@@ -139,6 +148,18 @@ namespace BethanysPieShopHRM.HR
             BirthDate = birthDate;
             HourlyRate = hourlyRate;
             //EmployeeType = employeeType;
+        }
+
+        public Employee(string firstName, string lastName, string email, DateTime birthDate, double hourlyRate, string street, string houseNumber, string zip, string city)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
+            BirthDate = birthDate;
+            HourlyRate = hourlyRate;
+            //EmployeeType = employeeType;
+
+            Address = new Address(street, houseNumber, zip, city);
         }
 
 
