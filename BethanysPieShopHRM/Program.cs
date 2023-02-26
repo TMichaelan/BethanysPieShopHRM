@@ -1,4 +1,5 @@
-﻿using BethanysPieShopHRM.HR;
+﻿using BethanysPieShopHRM;
+using BethanysPieShopHRM.HR;
 using System.Collections.Immutable;
 using System.Text;
 
@@ -9,6 +10,7 @@ int yearlyWage2 = Utilities.CalculateYearlyWageExpressionBodiedSyntax(12, 12, 12
 Console.WriteLine($"Yearly wage: {yearlyWage} and {yearlyWage2}");
 */
 
+/*
 Console.WriteLine("Creating an employee");
 Console.WriteLine("---------------------\n");
 
@@ -29,6 +31,8 @@ george.DisplayEmploeeDetails();
 
 bethany.PerformWork(8);
 bethany.ReceiveWage();
+*/
+
 
 /*
 bethany.PerformWork();
@@ -76,14 +80,16 @@ Console.WriteLine(result);
 Console.WriteLine(list);
 */
 
+/*
 WorkTask task;
 
 task.description = "Bake delicious pies";
 task.hours = 3;
 task.PerformWorkTask();
+*/
 
 // BethanysPieShopHRM.Accounting.Customer customer = new BethanysPieShopHRM.Accounting.Customer();
-
+/*
 
 #region First run Bethany
 
@@ -130,7 +136,7 @@ george.DisplayEmploeeDetails();
 george.ReceiveWage();
 
 #endregion
-
+*/
 //Lists
 /*
 int[] sampleArray1 = new int[5];
@@ -220,6 +226,8 @@ for (int i = 0; i < employeeIdss.Count; i++)
 
 */
 
+/*
+
 Employee mary = new("Mary", "Jones", "mary@mail.com", new DateTime(1987, 01, 15), 30);
 //Employee bobJunior = new("Bob", "Spancer", "bobcancer@mail.com", new DateTime(1993, 08, 1), 20);
 Employee kevin = new("Kevin", "Marks", "kevin@mail.com", new DateTime(1965, 02, 13), 15);
@@ -269,3 +277,62 @@ IEmployee bobJunior1 = new JuniorResearcher("Bob", "Spancer", "bobcancer@mail.co
 IEmployee kevin2 = new Researcher("Kevin", "Marks", "kevin@mail.com", new DateTime(1965, 02, 13), 15);
 IEmployee kate2 = new Manager("Kate", "Greggs", "kate@mail.com", new DateTime(1999, 03, 15), 15);
 IEmployee kim2 = new Researcher("Kim", "Jacobs", "kim@mail.com", new DateTime(2000, 06, 8), 15);
+*/
+
+
+
+List<Employee> employees = new List<Employee>();
+
+Console.ForegroundColor = ConsoleColor.Green;
+Console.WriteLine("***********************************");
+Console.WriteLine("* Bethany's Pie Shop Employee App *");
+Console.WriteLine("***********************************");
+Console.ForegroundColor = ConsoleColor.White;
+
+string userSelection;
+Console.ForegroundColor = ConsoleColor.Blue;
+
+Utilities.CheckForExistingEmployeeFile();
+
+do
+{
+    Console.ForegroundColor = ConsoleColor.Cyan;
+    Console.WriteLine($"Loaded {employees.Count} employee(s)\n\n");
+
+    Console.ForegroundColor = ConsoleColor.White;
+    Console.WriteLine("********************");
+    Console.WriteLine("* Select an action *");
+    Console.WriteLine("********************");
+
+    Console.WriteLine("1: Register employee");
+    Console.WriteLine("2: View all employees");
+    Console.WriteLine("3: Save data");
+    Console.WriteLine("4: Load data");
+    Console.WriteLine("9: Quit application");
+    Console.Write("Your selection: ");
+
+    userSelection = Console.ReadLine();
+
+    switch (userSelection)
+    {
+        case "1":
+            Utilities.RegisterEmployee(employees);
+            break;
+        case "2":
+            Utilities.ViewAllEmployees(employees);
+            break;
+        case "3":
+            Utilities.SaveEmployees(employees);
+            break;
+        case "4":
+            Utilities.LoadEmployees(employees);
+            break;
+        case "9": break;
+        default:
+            Console.WriteLine("Invalid selection. Please try again.");
+            break;
+    }
+}
+while (userSelection != "9");
+
+Console.WriteLine("Thanks for using the application");

@@ -8,9 +8,8 @@ namespace BethanysPieShopHRM.HR
 {
     internal class StoreManager : Employee
     {
-        public StoreManager(string firstName, string lastName, string email, DateTime birthDate) : base(firstName, lastName, email, birthDate)
+        public StoreManager(string firstName, string lastName, string email, DateTime birthDate, double hourlyRate) : base(firstName, lastName, email, birthDate, hourlyRate)
         {
-
         }
     }
 }
