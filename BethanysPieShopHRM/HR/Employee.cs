@@ -9,7 +9,7 @@ using System.Xml.Linq;
 
 namespace BethanysPieShopHRM.HR
 {
-    internal class Employee: IEmployee
+    public class Employee: IEmployee
     {
         private string firstName;
         private string lastName;
