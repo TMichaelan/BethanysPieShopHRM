@@ -262,3 +262,10 @@ string streetName = jake.Address.ToString();
 
 
 mary.GiveBonus();
+
+//IEmployee newJake = new Employee("Jake", "Nicols", "jake@mail.com", new DateTime(1995, 02, 6), 16, "New street", "123", "123456", "Pie Ville");
+
+IEmployee bobJunior1 = new JuniorResearcher("Bob", "Spancer", "bobcancer@mail.com", new DateTime(1993, 08, 1), 20);
+IEmployee kevin2 = new Researcher("Kevin", "Marks", "kevin@mail.com", new DateTime(1965, 02, 13), 15);
+IEmployee kate2 = new Manager("Kate", "Greggs", "kate@mail.com", new DateTime(1999, 03, 15), 15);
+IEmployee kim2 = new Researcher("Kim", "Jacobs", "kim@mail.com", new DateTime(2000, 06, 8), 15);

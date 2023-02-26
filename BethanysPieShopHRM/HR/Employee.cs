@@ -9,7 +9,7 @@ using System.Xml.Linq;
 
 namespace BethanysPieShopHRM.HR
 {
-    internal class Employee
+    internal class Employee: IEmployee
     {
         private string firstName;
         private string lastName;
@@ -234,6 +234,15 @@ namespace BethanysPieShopHRM.HR
             Console.WriteLine($"{FirstName} {LastName} received a generic bonus of 100!");
         }
 
+        public void DisplayEmployeeDetails()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void GiveCompliment()
+        {
+            Console.WriteLine($"You've done a great job, {FirstName}");
+        }
     }
 }
 
